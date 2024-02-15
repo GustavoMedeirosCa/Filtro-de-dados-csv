@@ -47,7 +47,7 @@ function fillTable(data) {
 function showProcessDetails(diretoria, processos) {
     const processList = document.getElementById('process-list');
     processList.innerHTML = ''; // Limpa a lista de processos antes de adicionar os novos
-
+    console.log(processos);
     // Verifica se processos estão definidos antes de iterar sobre eles
     if (processos) {
         processos.forEach(subprocessos => { // Itera sobre os subprocessos
@@ -105,7 +105,6 @@ function parseCSV(csv) {
                     // array1.push(cols2[j].trim());
                 }
                 u++;
-                console.log(array1);
                 
                 const primeiroProcesso = array1;
                 if (primeiroProcesso !== "") {
