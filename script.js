@@ -7,21 +7,24 @@ function fillTable(data) {
     // Itera sobre as diretorias
     data.diretorias.forEach((diretoria, index) => {
         const row = document.createElement('tr');
-        row.innerHTML = `
-            <td class="directorate">${diretoria}</td>
-            <td>${data.numeroProcessos[index]}</td>
-        `;
+        if(diretoria != ""){
+            row.innerHTML = `
+                <td class="directorate">${diretoria}</td>
+                <td>${data.numeroProcessos[index]}</td>
+            `;
+         }
         tableBody.appendChild(row);
     
         const processosDiretoria = data.processosDiretorias[index];
         const ul = document.createElement('ul');
         processosDiretoria.forEach(arrayDeProcessos => {
             arrayDeProcessos.forEach(processo => {
-                if(processo != ""){
-                const listItem = document.createElement('li');
-                // Modifique aqui para formatar os processos como desejar
-                listItem.textContent = processo;
-                ul.appendChild(listItem);
+                console.log(processo);
+                if(processo=="s"){
+                    const listItem = document.createElement('li');
+                    // Modifique aqui para formatar os processos como desejar
+                    listItem.textContent = processo;
+                    ul.appendChild(listItem);
                 }
             });
         });
